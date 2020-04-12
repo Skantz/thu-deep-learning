@@ -1,10 +1,8 @@
 coursework
 
-Starting Pytorch exercises:
+Starting Pytorch exercises
 
-logistic
+logistic regression, MLP, convnet for MNIST
 
-mlp
-
-convnet
+RNN for SST
 
