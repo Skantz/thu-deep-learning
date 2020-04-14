@@ -104,7 +104,7 @@ def main():
         (data_train, data_val, data_test), batch_size = 32)
 
     model = SentRNN(embeddings=text.vocab.vectors)
-    model, stats = train(model, device, iter_train, 32, lr=0.005, optimizer="Adam")
+    model, stats = train(model, device, iter_train, 32, lr=0.002, optimizer="Adam")
 
     analysis = Evaluation(5, 1, stats)
     file_prefix = ""
