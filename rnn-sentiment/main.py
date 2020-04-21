@@ -6,11 +6,11 @@ from model import SentRNN
 
 def train(model, device, loader, batch_size, lr, optimizer):
 
-    epochs = 2
+    epochs = 10
     if optimizer == "SGD":
-        optimizer = torch.optim.SGD(model.parameters(), lr, )
+        optimizer = torch.optim.SGD(model.parameters(), lr, weight_decay=10**-7)
     else:
-        optimizer = torch.optim.Adam(model.parameters(), lr, )
+        optimizer = torch.optim.Adam(model.parameters(), lr, weight_decay=10**-7)
     display_inverse_freq = len(loader) + 1
 
     model.to(device)
@@ -104,7 +104,7 @@ def main():
         (data_train, data_val, data_test), batch_size = 32)
 
     model = SentRNN(embeddings=text.vocab.vectors)
-    model, stats = train(model, device, iter_train, 32, lr=0.002, optimizer="Adam")
+    model, stats = train(model, device, iter_train, 32, lr=0.0001, optimizer="Adam")
 
     analysis = Evaluation(5, 1, stats)
     file_prefix = ""
