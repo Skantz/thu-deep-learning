@@ -40,3 +40,4 @@ def gmm(X, n_classes, n_iter):
 
     print(mu, eps)
     return np.array([0 for _ in range(N)]), mu, eps
+
