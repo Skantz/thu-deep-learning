@@ -1,0 +1,3 @@
+[submodule "cc_vae/zhusuan"]
+	path = cc_vae/zhusuan
+	url = https://github.com/thu-ml/zhusuan/
